@@ -271,21 +271,7 @@ function ProductList() {
          }));
     };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     return (
         <div>
              <div className="navbar" style={styleObj}>
@@ -339,7 +325,10 @@ function ProductList() {
                             <img className="product-image" src={plant.image} alt={plant.name} />
                             <div className="product-title">{plant.name}</div>
                             {/*Similarly like the above plant.name show other details like description and cost*/}
-                            <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                            <button  className={`product-button ${addedToCart[plant.name] ? "added-to-cart" : ""}`} 
+                                onClick={() => handleAddToCart(plant)} 
+                                disabled={addedToCart[plant.name]}
+                                >{addedToCart[plant.name] ? "Added" : "Add to Cart"}</button>
                         </div>
                         ))}
                     </div>
