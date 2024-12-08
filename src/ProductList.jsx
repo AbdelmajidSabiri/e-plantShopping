@@ -271,7 +271,7 @@ function ProductList() {
          }));
     };
 
-    
+
     return (
         <div>
              <div className="navbar" style={styleObj}>
@@ -329,6 +329,7 @@ function ProductList() {
                                 onClick={() => handleAddToCart(plant)} 
                                 disabled={addedToCart[plant.name]}
                                 >{addedToCart[plant.name] ? "Added" : "Add to Cart"}</button>
+                                
                         </div>
                         ))}
                     </div>
